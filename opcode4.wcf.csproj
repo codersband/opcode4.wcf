@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA0F92E6-C5DC-4E67-8792-E261690B3581}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>opcode4.wcf</RootNamespace>
+    <AssemblyName>opcode4.wcf</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\BaseClientData.cs" />
+    <Compile Include="Clients\BaseWcfClient.cs" />
+    <Compile Include="Clients\BindHelper.cs" />
+    <Compile Include="Clients\LogSvcClient.cs" />
+    <Compile Include="ErrorHandling\ErrorHandler.cs" />
+    <Compile Include="ErrorHandling\ErrorHandlingBehavior.cs" />
+    <Compile Include="ErrorHandling\ErrorLoggingBehavior.cs" />
+    <Compile Include="ErrorHandling\IExceptionToFaultConverter.cs" />
+    <Compile Include="ErrorHandling\MapExceptionToFaultAttribute.cs" />
+    <Compile Include="Interceptors\LogOperationAttribute.cs" />
+    <Compile Include="Interceptors\ServiceFaultProvider.cs" />
+    <Compile Include="Interfaces\ILogService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\ServiceFaultResult.cs" />
+    <Compile Include="Results\SvcResult.cs" />
+    <Compile Include="Security\IdentityEndpointBehavior.cs" />
+    <Compile Include="Security\IdentityMessageInspector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\opcode.log\opcode.log.csproj">
+      <Project>{EAB9A7B7-179A-41B0-8CAA-1B0865DACFF5}</Project>
+      <Name>opcode.log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\opcode4.core\opcode4.core.csproj">
+      <Project>{6F0629C2-FE06-4592-9B36-3403035AED76}</Project>
+      <Name>opcode4.core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\opcode4.utilities\opcode4.utilities.csproj">
+      <Project>{FBBA352B-37A6-45FB-BC0C-E3FC52FFE643}</Project>
+      <Name>opcode4.utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

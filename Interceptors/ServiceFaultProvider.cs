@@ -41,7 +41,7 @@ namespace opcode4.wcf.Interceptors
                     };
             }
 
-            var msg = string.Format("[{0}] Message: {1}\r\n{2}\r\n{3}", metaInfo, error.Message, error.StackTrace, error.InnerException);
+            var msg = $"[{metaInfo}] Message: {error.Message}\r\n{error.StackTrace}\r\n{error.InnerException}";
             if (!isLogged)
             {
                 var logEntity = new LogEntity

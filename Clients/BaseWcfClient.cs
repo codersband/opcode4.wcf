@@ -1,8 +1,6 @@
 ﻿using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using System.Threading;
-using opcode4.core.Model.Identity;
 using opcode4.utilities;
 using opcode4.wcf.Security;
 
@@ -30,11 +28,6 @@ namespace opcode4.wcf.Clients
                     Binding = BindHelper.BasicHttp;
                     break;
             }
-        }
-
-        public BaseWcfClient(string serviceName) : this()
-        {
-            Thread.CurrentPrincipal = new CustomPrincipal(new CustomIdentity(0, serviceName, 0, new []{"SERViCE"}));
         }
 
         private TClient CreateChannel()

@@ -48,9 +48,9 @@ namespace opcode4.wcf.Interceptors
                 var logEntity = new LogEntity
                 {
                     ActorName = Thread.CurrentPrincipal.Identity.Name,
-                    ActorId = TActorUtils.ActorId,
+                    ActorId = IdentityUtils.Id,
                     EventDate = DateTime.Now,
-                    ServerID = ConfigUtils.ServerID,
+                    ServerId = ConfigUtils.ServerId,
                     EventType = LogEventType.Debug,
                     FormalMessage = "CALLINTERCEPT",
                     Message = $"[SERVICE.{operationName}] \t{_elapsed} {message}"

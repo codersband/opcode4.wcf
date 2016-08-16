@@ -16,7 +16,7 @@ namespace opcode4.wcf.Clients
     public class LogSvcClient : BaseClientData
     {
         private static ChannelFactory<ILogService> _factory;
-        private readonly string _serverId = ConfigUtils.ServerID;
+        private readonly string _serverId = ConfigUtils.ServerId;
 
         public LogSvcClient()
         {
@@ -134,7 +134,7 @@ namespace opcode4.wcf.Clients
                 if (string.IsNullOrEmpty(logEntity.FormalMessage))
                     logEntity.FormalMessage = "WCFClient.FE";
 
-                logEntity.ServerID = _serverId;
+                logEntity.ServerId = _serverId;
                 logEntity.EventDate = DateTime.Now;
 
                 channel.AddEvent(logEntity);

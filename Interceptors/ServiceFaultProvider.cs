@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ServiceModel;
-using opcode.log;
 using opcode4.core.Exceptions;
 using opcode4.core.Model.Log;
+using opcode4.log;
 using opcode4.wcf.ErrorHandling;
 using opcode4.wcf.Results;
 

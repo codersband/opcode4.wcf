@@ -4,10 +4,10 @@ using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading;
 using System.Xml;
-using opcode.log;
 using opcode4.core.Helpers;
 using opcode4.core.Model.Identity;
 using opcode4.core.Model.Log;
+using opcode4.log;
 using opcode4.utilities;
 using opcode4.wcf.Interfaces;
 

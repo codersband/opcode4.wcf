@@ -6,9 +6,9 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.Threading;
-using opcode.log;
 using opcode4.core.Helpers;
 using opcode4.core.Model.Log;
+using opcode4.log;
 using opcode4.utilities;
 
 namespace opcode4.wcf.ErrorHandling

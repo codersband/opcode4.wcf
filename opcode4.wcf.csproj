@@ -61,13 +61,13 @@
     <Compile Include="Security\IdentityMessageInspector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\opcode.log\opcode.log.csproj">
-      <Project>{EAB9A7B7-179A-41B0-8CAA-1B0865DACFF5}</Project>
-      <Name>opcode.log</Name>
-    </ProjectReference>
     <ProjectReference Include="..\opcode4.core\opcode4.core.csproj">
       <Project>{6F0629C2-FE06-4592-9B36-3403035AED76}</Project>
       <Name>opcode4.core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\opcode4.log\opcode4.log.csproj">
+      <Project>{EAB9A7B7-179A-41B0-8CAA-1B0865DACFF5}</Project>
+      <Name>opcode4.log</Name>
     </ProjectReference>
     <ProjectReference Include="..\opcode4.utilities\opcode4.utilities.csproj">
       <Project>{FBBA352B-37A6-45FB-BC0C-E3FC52FFE643}</Project>
